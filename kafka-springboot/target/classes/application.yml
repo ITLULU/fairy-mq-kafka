@@ -1,0 +1,45 @@
+#spring:
+#  kafka:
+#    bootstrap-servers: node01:9091,node01:9092,node01:9093
+#    producer:
+#      retries: 3 # 设置大于0的值，则客户端会将发送失败的记录重新发送
+#      buffer-memory: 33554432 #当生产端积累的消息达到batch-size或接收到消息linger.ms后,生产者就会将消息提交给kafka
+#      acks: 1 #ack=-1或all  当leader将数据都写到副本集成功后才返回
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      client-id: fairy-kafka #客户端id
+#      compression-type: gzip  # 消息压缩：none、lz4、gzip、snappy，默认为 none。
+#      properties:
+#        #class: com.fairy.kafka.partition.MyPartition  #指定自定义分区器
+#        enable:
+#          idempotence: true
+#        linger:
+#          ms: 1000  # 发送延时,当生产端积累的消息达到batch-size或接收到消息linger.ms后,生产者就会将消息提交给kafka
+#        max:
+#          block:
+#            ms: 6000 # KafkaProducer.send() 和 partitionsFor() 方法的最长阻塞时间 单位 ms
+#      transaction-id-prefix: trx_ #开启事务消息 但是其他普通消息就会出差
+#    consumer:
+#      heartbeat-interval: 3000
+#      group-id: consumer_group_fairy  #消费者组 id
+#      enable-auto-commit: false
+#      auto-offset-reset: latest
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      max-poll-records: 100 # 批量消费最大数量
+#      fetch-max-wait: 10
+#      properties:
+#        session:
+#          timeout:
+#            ms: 45000 # session超时，超过这个时间consumer没有发送心跳,就会触发rebalance操作 默认45秒
+#        request:
+#          timeout:
+#            ms: 20000 #请求超时
+#    listener:
+#      ack-mode: manual_immediate
+#      concurrency: 2
+#      type: batch  #批量并发消费
+#      ack-count:
+#      ack-time:
+#
+#

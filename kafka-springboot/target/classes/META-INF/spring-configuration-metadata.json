@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "kafka.consumer",
+      "type": "com.fairy.mq.kafka.config.KafkaConsumerProperties",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.mq",
+      "type": "com.fairy.mq.kafka.config.TopicConfigurations",
+      "sourceType": "com.fairy.mq.kafka.config.TopicConfigurations"
+    }
+  ],
+  "properties": [
+    {
+      "name": "kafka.consumer.auto-commit",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "kafka.consumer.bootstrap-servers",
+      "type": "java.lang.String",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.consumer.concurrency",
+      "type": "java.lang.Integer",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.consumer.group-id",
+      "type": "java.lang.String",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.consumer.max-poll-interval",
+      "type": "java.lang.Integer",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.consumer.max-poll-records",
+      "type": "java.lang.Integer",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.consumer.topic",
+      "type": "java.lang.String",
+      "sourceType": "com.fairy.mq.kafka.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "kafka.mq.topics",
+      "type": "java.util.List<com.fairy.mq.kafka.config.TopicConfigurations$ConsumerTopic>",
+      "sourceType": "com.fairy.mq.kafka.config.TopicConfigurations"
+    }
+  ],
+  "hints": []
+}
